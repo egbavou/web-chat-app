@@ -7,12 +7,13 @@ import * as Error from '@/views/errors'
 import * as Auth from '@/views/auth'
 import * as Discussion from '@/views/discussions'
 import * as Contact from '@/views/contacts'
+import * as GetStartedVue from '@/views/auth/GetStartedVue.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/get-stated',
     name: 'get-stated',
-    component: Home,
+    component: GetStartedVue,
     meta: {title: 'TP Web Avancé Master 1 IFRI réalisé en groupe'}
   },
   {
@@ -34,9 +35,10 @@ const routes = [
     meta: {title: 'Search User', requiresAuth: true}
   },
   {
-    path: '/login',
+    path: '/',
     component: Auth.Layout,
     children: [
+      { path: '/', name: 'demarrage', component: Auth.Demarrage, meta: {title: "Page de Démarrage", requiresAuth: false}},
       { path: '/login', name: 'login', component: Auth.Login, meta: {title: 'Login', requiresAuth: false} },
       { path: '/register', name: 'register', component: Auth.Register, meta: {title: 'Register', requiresAuth: false} },
       { path: '/reset/password', name: 'reset_pwd', component: Auth.ResetPassword, meta: {title: 'Reset Password', requiresAuth: false} },
