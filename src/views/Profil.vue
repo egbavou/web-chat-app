@@ -101,13 +101,14 @@ export default {
                     this.user.lastname = userData.lastname;
                     this.user.email = userData.email;
                     this.user.phone = userData.phone;
+                    this.user.photoUrl = userData.photoUrl;
                     // Vérifier s'il existe une URL de photo dans le localStorage
-                    const storedPhotoUrl = localStorage.getItem('userPhotoUrl');
-                    if (storedPhotoUrl) {
-                        this.user.photoUrl = storedPhotoUrl;
-                    } else {
-                        this.user.photoUrl = userData.photoUrl;
-                    }
+                    //const storedPhotoUrl = localStorage.getItem('userPhotoUrl');
+                    // if (storedPhotoUrl) {
+                    //     this.user.photoUrl = storedPhotoUrl;
+                    // } else {
+                    //     this.user.photoUrl = userData.photoUrl;
+                    // }
 
                 } catch (error) {
                     console.error('Erreur lors de la requête:', error);
@@ -141,7 +142,7 @@ export default {
                         }
                     });
 
-                    localStorage.setItem('userPhotoUrl', this.user.photoUrl);
+                    //localStorage.setItem('userPhotoUrl', this.user.photoUrl);
                     console.log(response.data);
                     // Mettre à jour les données de l'utilisateur si nécessaire
                     // Par exemple, si le backend renvoie les nouvelles informations de l'utilisateur
