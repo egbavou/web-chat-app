@@ -102,13 +102,7 @@ export default {
                     this.user.email = userData.email;
                     this.user.phone = userData.phone;
                     this.user.photoUrl = userData.photoUrl;
-                    // Vérifier s'il existe une URL de photo dans le localStorage
-                    //const storedPhotoUrl = localStorage.getItem('userPhotoUrl');
-                    // if (storedPhotoUrl) {
-                    //     this.user.photoUrl = storedPhotoUrl;
-                    // } else {
-                    //     this.user.photoUrl = userData.photoUrl;
-                    // }
+                    
 
                 } catch (error) {
                     console.error('Erreur lors de la requête:', error);
