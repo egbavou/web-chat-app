@@ -69,8 +69,8 @@
         <div class="mt- p-10 flex flex-col items-center h-screen ml-4">
             <img class="" src="@/assets/images/Message sent.png" alt="Background" />
             <h2 class="text-3xl">GlowChat</h2>
-            <p class="text-center text-base text-slate-400">
-                Lorem ipsum dolor sit amet. Eos similique alias est voluptas galisum in eligendi
+            <p class="text-center mt-3 text-base text-slate-400">
+                Un projet web Avancé réalisé en groupe par les <b>étudiant en Master 1 IFRI UAC 2023-2024</b>
             </p>
         </div>
     </div>

@@ -5,8 +5,7 @@
         <img class="" src="@/assets/images/Message sent.png" alt="Background" />
         <h2 class=" mt-5 text-3xl">GlowChat</h2>
         <p class="text-center mt-3 text-base text-slate-400">
-          Lorem ipsum dolor sit amet. Eos similique alias est voluptas galisum in
-          eligendi
+          Un projet web Avancé réalisé en groupe par les <b>étudiant en Master 1 IFRI UAC 2023-2024</b>
         </p>
         <div class=" w-1/3 px-2 py-1 rounded text-center font- mt-8 text-[#FFFFFF] bg-[#329993] hover:scale-105 duration-300">
             <router-link to="/login" class="">Get Started</router-link>

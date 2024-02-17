@@ -26,7 +26,7 @@ const routes = [
     path: '/profil',
     name: 'profil',
     component: Profil,
-    meta: {title: 'Profil', requiresAuth: true}
+    meta: {title: 'Profil', requiresAuth: true},
   },
   {
     path: '/search/user',
@@ -81,7 +81,20 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   document.title = to.meta.title+' | '+import.meta.env.VITE_APP_NAME
-  next()
+
+  // Vérifier si la route nécessite une authentification
+  if (to.meta.requiresAuth && !localStorage.getItem('accessToken')) {
+    // Si l'utilisateur n'est pas authentifié, rediriger vers la page de connexion
+    next({ name: 'login', query: { redirect: to.fullPath }})
+  } else if ((!to.meta.requiresAuth || to.name === 'login' || to.name === '' || to.name === 'register') && localStorage.getItem('accessToken')) {
+    // Si l'utilisateur est déjà connecté et tente d'accéder à une page non authentifiée,
+    // rediriger vers la page de profil
+    next({ name: 'profil' })
+  } else {
+    // Si l'utilisateur est authentifié ou si la route ne nécessite pas d'authentification,
+    // accéder à la route
+    next()
+  }
 })
 
 export default router
