@@ -11,10 +11,14 @@ import * as GetStartedVue from '@/views/auth/GetStartedVue.vue'
 
 const routes = [
   {
-    path: '/get-stated',
-    name: 'get-stated',
-    component: GetStartedVue,
-    meta: {title: 'TP Web Avancé Master 1 IFRI réalisé en groupe'}
+    path: '/',
+    component: Auth.Layout,
+    children: [
+      { path: '/', name: 'demarrage', component: Auth.GetStartedVue, meta: {title: "Page de Démarrage", requiresAuth: false}},
+      { path: '/login', name: 'login', component: Auth.Login, meta: {title: 'Login', requiresAuth: false} },
+      { path: '/register', name: 'register', component: Auth.Register, meta: {title: 'Register', requiresAuth: false} },
+      { path: '/reset/password', name: 'reset_pwd', component: Auth.ResetPassword, meta: {title: 'Reset Password', requiresAuth: false} },
+    ]
   },
   {
     path: '/home',
@@ -33,16 +37,6 @@ const routes = [
     name: 'search_user',
     component: SearchUser,
     meta: {title: 'Search User', requiresAuth: true}
-  },
-  {
-    path: '/',
-    component: Auth.Layout,
-    children: [
-      { path: '/', name: 'demarrage', component: Auth.Demarrage, meta: {title: "Page de Démarrage", requiresAuth: false}},
-      { path: '/login', name: 'login', component: Auth.Login, meta: {title: 'Login', requiresAuth: false} },
-      { path: '/register', name: 'register', component: Auth.Register, meta: {title: 'Register', requiresAuth: false} },
-      { path: '/reset/password', name: 'reset_pwd', component: Auth.ResetPassword, meta: {title: 'Reset Password', requiresAuth: false} },
-    ]
   },
   {
     path: '/discussions',
